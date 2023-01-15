@@ -14,7 +14,7 @@ const Body = ({projects = []}) => {
 
 const Hero = ({project} : any) => {
   return (
-   <div className="hero" style={{backgroundImage: `url(${project.mainImage.asset.publicUrl})`, height : '500px'}}>
+   <div className="hero" style={{backgroundImage: `url(${project.mainImage.asset.publicUrl})`, height : '800px', opacity : 10}}>
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content w-full lg:pl-12">
         <div className="w-full text-left">

@@ -12,6 +12,18 @@ query MyQuery {
 }
 `)
 
+const {data: blogs} = await graphql(`
+query SanityAllBlogPages {
+  allSanityBlogPost {
+    nodes {
+      slug {
+        current
+      }
+    }
+  }
+}
+`)
+
 const { data : stories} = await graphql(`
 query AllWebBuildPage {
   allSanityWebStory {
@@ -24,8 +36,15 @@ query AllWebBuildPage {
   }
 }
 `)
-console.log('Web Story')
-console.log(JSON.stringify(stories))
+
+blogs.allSanityBlogPost.nodes.forEach(blog => {
+  actions.createPage({
+    path : `blog/${blog.slug.current}`,
+    component : require.resolve(`./src/templates/sanity-blog.js`),
+    context : {slug : blog.slug.current}
+  })
+})
+
 stories.allSanityWebStory.nodes.forEach(story => {
   actions.createPage({
     path : `web-story/${story.slug.current}`,

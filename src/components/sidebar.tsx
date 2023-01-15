@@ -25,7 +25,7 @@ const SideBar = ({children} : any) => {
                 {/* <div> */}
                     <img src="/profile.jpg" alt="Profile Picture" className='rounded-full mt-5 w-20 h-20'/>
                 {/* </div> */}
-                <h2 className='text-white font-extrabold'>Mohib Ali</h2>
+                <h2 className='text-white font-bold'>Mohib</h2>
                 <span>Full Stack Developer</span>
                 <span>Mobile {'&'} Web</span>
                 <span>dev.mohib@gmail.com</span>
@@ -54,24 +54,26 @@ const SideBar = ({children} : any) => {
                     <h1 className='text-xl my-3 text-white'>Skills</h1>
                     <div className='flex flex-row justify-center'>
                         <div className='flex-col-center mx-2'>
-                            <div className="radial-progress text-yellow-400" style={web}>90%</div>
+                            <div className="radial-progress text-yellow-400" style={web}>9.5</div>
                             <h2 className='mt-4'>Web</h2>
                         </div>
                         <div className='flex-col-center mx-2'>
-                            <div className="radial-progress text-yellow-400" style={mobile}>85%</div>
+                            <div className="radial-progress text-yellow-400" style={mobile}>9.5</div>
                             <h2 className='mt-4'>Mobile</h2>
                         </div><div className='flex-col-center mx-2'>
-                            <div className="radial-progress text-yellow-400" style={backend}>80%</div>
+                            <div className="radial-progress text-yellow-400" style={backend}>9.0</div>
                             <h2 className='mt-4'>Backend</h2>
                         </div>
                     </div>
                 </div>
                 <Line />
                 <div className='text-white mb-5'>
-                    <h1 className=' text-xl'>Coding</h1>
-                    <CodingBar text="Javascript" percentage={90} />
-                    <CodingBar text="Flutter" percentage={85} />
-                    <CodingBar text="DevOps" percentage={70} />
+                    <h1 className='font-normal text-xl'>Favourite</h1>
+                    <CodingBar text="React, Redux, Typescript" percentage={99} />
+                    <CodingBar text="MERN Stack" percentage={95} />
+                    <CodingBar text="Flutter Firebase" percentage={90} />
+                    <CodingBar text="Headless CMS, Strapi, Sanity" percentage={90} />
+                    <CodingBar text="Canvas, Threejs, Fabricjs" percentage={90} />
                 </div>
                 <Line />
                 <div className='text-white'>
@@ -96,8 +98,8 @@ const SideBar = ({children} : any) => {
 
 const CodingBar = ({text = "Javascript", percentage = 85} : any) => (<div>
     <div className='flex flex-row justify-between my-2'>
-        <b>{text}</b>
-        <p>{percentage}</p>
+        <i>{text}</i>
+        {/* <p>{(percentage/10)}/10</p> */}
     </div>
     <div className='w-full flex-row-center'>
         <div className='h-0.5 bg-yellow-400' style={{width : `${percentage}%`}}/>
@@ -107,11 +109,11 @@ const CodingBar = ({text = "Javascript", percentage = 85} : any) => (<div>
 
 const SkillAvatar = () => (<div className='flex flex-col items-center'>
 <div className='w-16 h-16 mx-2 rounded-full bg-yellow-400'/>
-<p className='my-2'>Coding</p>
+<p className='my-2'>Skill</p>
 </div>)
 
 const Experience = () => {
-    const experience = ['Javascript, Reactjs, Sveltejs', 'React Native, Flutter', 'Nodejs, Nestjs, Firebase', 'Sass, Less, Tailwindss', 'Webpack, Vitejs, Gulp', 'Solidy, Etherjs, Web3.js, Moralis']
+    const experience = ['Typescript, Reactjs, SvelteKit', 'React Native, Flutter', 'Gatsby, Nextjs, Astro','MERN Stack, JAMStack, Firebase','Python, Nodejs, PHP', 'GraphQL, Restful API, Web Sockets','GCP, AWS, Digital Ocean','Git, CI/CD, Linux','Docker, Nginx, Elastic Stack', 'Tailwindcss,Bootstrap,Material UI', 'HTML Canvas, Threejs, WebXR', 'Webpack, Vitejs, Babel', 'Solidy, Etherjs, HardHat']
     return(
         <div className='text-white'>
             <h1 className='font-extrabold my-2'>Experience</h1>

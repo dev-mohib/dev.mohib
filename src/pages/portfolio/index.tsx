@@ -40,8 +40,8 @@ const Card = ({project} : any) => {
   },[])  
   return(
     <div className={`md:w-1/3 sm:w-full  my-3 px-2`}>
-      <div className={`rounded-xl  w-full h-72 flex flex-col justify-between shadow-2xl cursor-pointer`} style={{backgroundColor : bgColor}}>
-        <img className='rounded-t-xl bg-cover w-full' src={mainImage.asset.publicUrl} style={{height :180}}  />
+      <div className={`rounded-xl  w-full pb-2  flex flex-col justify-between shadow-2xl cursor-pointer`} style={{backgroundColor : bgColor}}>
+        <img className='rounded-t-xl bg-cover w-full' src={mainImage.asset.publicUrl} style={{height :260}}  />
         <div className='h-2/4 px-2 text-white'>
           <h1 className='text-2xl font-extrabold'>{title}</h1>
           <span className='mt-2'>{excerpt[0]?.children[0]?.text.slice(0, 100)??'Empty Description'}....</span>

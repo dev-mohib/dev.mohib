@@ -7,6 +7,7 @@ const Markdown = ({type, text} : any) =>{
             {
                 type == 'span' ? <span>{text}</span>:
                 type == 'div'  ? <div>{text}</div>:
+                type == 'normal'  ? <span>{text}</span>:
                 type == 'h1'? <h1>{text}</h1>:
                 type == 'h2'? <h2>{text}</h2>:
                 type == 'h3'? <h3>{text}</h3>:
