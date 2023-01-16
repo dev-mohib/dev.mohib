@@ -12,7 +12,7 @@ import {
   AmpVideo,
   AmpSource,
 } from 'react-google-stories'
-
+import './story.css'
 
 function StoryScreen({data}) {
   const { storyCover, storytitle, storyPages, description } = data.sanityWebStory
@@ -41,10 +41,11 @@ function StoryScreen({data}) {
         storyPages.map((story, index) => <AmpStoryPage 
           id={`page-${index}`}>
             <AmpStoryGridLayer 
-              template="vertical"
+              template="vertical" //vertical/ fill
               class="noedge"
               >
               <AmpHeader title={story.storyHeader}/>
+              {/* <AmpParagraph grid-area="lower-third" text="Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf." /> */}
               {
                 story.mediaType == 'image' ? 
             <AmpImg src={story.mediaSource.asset.url}
@@ -64,6 +65,8 @@ function StoryScreen({data}) {
                 <AmpSource src={story.mediaSource.asset.url} type="video/mp4" />
               </AmpVideo>
               }
+              {/* <AmpQuote className="lower-third" text="Dogs come when they're called. Cats take a message and get back to you. --Mary Bly" /> */}
+              <AmpParagraph text={story.paragraph??''} />
             </AmpStoryGridLayer>
           </AmpStoryPage>)
       }
@@ -73,7 +76,14 @@ function StoryScreen({data}) {
       </AmpStory>
   );
 }
-
+export const Head = () => {
+  return(
+  <>
+  <title>Dev Mohib</title>
+  <meta title="Dev Mohib" content="Dev Mohib, Portfolio, Programming, Coding, Developer, Full stack Developer" />
+  </>)
+  }
+  
 export const query = graphql`
 query WebStoryBySlug ($slug: String){
   sanityWebStory(slug: {current: {eq: $slug}}) {

@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import React, { useState } from 'react'
 
 const StoryListView = ({stories} : {stories : any[]}) => {
+    console.log({stories})
 return(
     <>
     <div className='font-mono font-bold text-2xl my-10 '>Top Stories</div>
